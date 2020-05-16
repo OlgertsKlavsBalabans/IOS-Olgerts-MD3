@@ -1,0 +1,6 @@
+framework module Pods_map_start {
+  umbrella header "Pods-map-start-umbrella.h"
+
+  export *
+  module * { export * }
+}
