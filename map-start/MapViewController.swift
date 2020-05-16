@@ -51,14 +51,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,filterDelegate {
         
         addPointsManualy()
         addPointsDatabase()
-         
-        if (noDescription == true) {
-            deleteAnnotWithDescription()
-        }
-        
-        if (tenkmFromLoc == true) {
-            deleteAnnotAboveTenKm()
-        }
+
         
     }
     
@@ -109,8 +102,21 @@ class MapViewController: UIViewController, MKMapViewDelegate,filterDelegate {
                 point.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 self.mapView.addAnnotation(point)
             }
+            self.checkForOptions()
+            
         }
         
+    }
+    
+    func checkForOptions() {
+         
+        if (noDescription == true) {
+            deleteAnnotWithDescription()
+        }
+        
+        if (tenkmFromLoc == true) {
+            deleteAnnotAboveTenKm()
+        }
     }
     
     
